@@ -1,5 +1,5 @@
 let
-  defaultNeuron = https://raw.githubusercontent.com/hpenagos/HHmodelParms/main/defaultNeuron.ffg
+  defaultNeuron = https://raw.githubusercontent.com/hpenagos/HHmodelParms/main/defaultSwcNeuron.ffg
 let
   stimulator =
   Neuron/stimulator {
@@ -15,7 +15,7 @@ let
   } in
 Neuron/scene {
   neurons: [
-    { neuron: defaultNeuron [
+    { neuron: defaultSwcNeuron [
       { id: 1,  parent: -1, x: -500.0, y: 0.0, z: 0.0, r: 0.5, type: 1 },
       { id: 2,  parent:  1, x: -400.0, y: 0.0, z: 0.0, r: 0.5, type: 2 },
       { id: 3,  parent:  2, x: -300.0, y: 0.0, z: 0.0, r: 0.5, type: 2 },
