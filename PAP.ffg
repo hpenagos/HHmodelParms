@@ -6,8 +6,8 @@ let
   stimulator =
   Neuron/stimulator {
     envelope: {
-      period_sec: 0.05,
-      onset_sec: 0.0,
+      period_sec: 0.008,
+      onset_sec: 0.0001,
       offset_sec: 0.0005
     },
     current_shape: SquareWave {
