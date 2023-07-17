@@ -57,7 +57,7 @@ in
     na_transient: Neuron/channel {
       ion_selectivity: only_na,
       activation: {
-        gates: 1,
+        gates: 10,
         magnitude: {v_at_half_max_mv: -30.0, slope: 5.5},
         time_constant: Instantaneous {}
       },
