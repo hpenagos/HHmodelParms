@@ -3,6 +3,19 @@ let
 let
   newDefaultNeuron = https://raw.githubusercontent.com/hpenagos/HHmodelParms/main/defaultSwcNeuron.ffg
 let
+  stimulator =
+  Neuron/stimulator {
+    envelope: {
+      period_sec: 0.05,
+      onset_sec: 0.0,
+      offset_sec: 0.0005
+    },
+    current_shape: SquareWave {
+      on_current_uamps_per_square_cm: 100.0,
+      off_current_uamps_per_square_cm: -1.0
+    }
+  }
+let
   mkNeuron = \useNew ->
     let y = if useNew then 0.1 else 0.0
     let maker = if useNew then newDefaultNeuron else oldDefaultNeuron
@@ -25,19 +38,7 @@ let
           { segment: 10, stimulator: stimulator },
         ]
        }
-let
-  stimulator =
-  Neuron/stimulator {
-    envelope: {
-      period_sec: 0.05,
-      onset_sec: 0.0,
-      offset_sec: 0.0005
-    },
-    current_shape: SquareWave {
-      on_current_uamps_per_square_cm: 100.0,
-      off_current_uamps_per_square_cm: -1.0
-    }
-  } in
+  in
 Neuron/scene {
   neurons: [
      mkNeuron false,
