@@ -1,5 +1,5 @@
 let
-  defaultNeuron = ./defaultNeuron.ffg
+  defaultNeuron = https://raw.githubusercontent.com/hpenagos/HHmodelParms/main/defaultNeuron.ffg
 let
   stimulator =
   Neuron/stimulator {

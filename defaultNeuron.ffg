@@ -1,4 +1,4 @@
-let membranes = ./membranes.ffg
+let membranes = https://raw.githubusercontent.com/hpenagos/HHmodelParms/main/membranes.ffg
 in
 
 \segments -> Neuron/neuron
