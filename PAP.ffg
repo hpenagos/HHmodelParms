@@ -11,7 +11,7 @@ let
       offset_sec: 0.0005
     },
     current_shape: SquareWave {
-      on_current_uamps_per_square_cm: 100.0,
+      on_current_uamps_per_square_cm: 200.0,
       off_current_uamps_per_square_cm: -1.0
     }
   }
