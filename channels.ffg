@@ -9,7 +9,7 @@ in
      k: Neuron/channel {
        ion_selectivity: only_k,
        activation: {
-         gates: 4,
+         gates: 8,
          magnitude: {v_at_half_max_mv: -53.0, slope: 15.0},
          time_constant: Sigmoid
            { v_at_max_tau_mv: -79.0,
