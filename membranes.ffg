@@ -48,7 +48,7 @@ in {
       capacitance_farads_per_square_cm: 1e-6,
       membrane_channels: [
         { channel: k_slow, siemens_per_square_cm: 36e-3 },
-        { channel: na_transient, siemens_per_square_cm: 120e-3 },
+        { channel: na_transient, siemens_per_square_cm: 12e-3 },
         { channel: leak, siemens_per_square_cm: 3e-5 }
       ]
     }
