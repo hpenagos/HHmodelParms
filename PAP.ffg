@@ -17,9 +17,9 @@ let
     in {
           id: i,
           parent: parent,
-          x: ii,
-          y: 50.1 * Real/cos (ii % 10.0),
-          z: 50.1 * Real/sin (ii % 10.0),
+          x: ii * 5.0,
+          y: 20.1 * Real/cos (ii % 5.0),
+          z: 20.1 * Real/sin (ii % 5.0),
           r: 0.5,
           type: if (Natural/equal i 0) then 1 else 2
         }
@@ -28,12 +28,12 @@ let
   stimulator =
   Neuron/stimulator {
     envelope: {
-      period_sec: 0.008,
+      period_sec: 0.010,
       onset_sec: 0.0001,
-      offset_sec: 0.0005
+      offset_sec: 0.0007
     },
     current_shape: SquareWave {
-      on_current_uamps_per_square_cm: 200.0,
+      on_current_uamps_per_square_cm: 300.0,
       off_current_uamps_per_square_cm: -1.0
     }
   }
@@ -42,11 +42,11 @@ let
     let y = if useNew then 0.1 else 0.0
     let maker = if useNew then newDefaultNeuron else oldDefaultNeuron
     in {
-         neuron: maker (prelude.list.generate 100 segment),
+         neuron: maker (prelude.list.generate 200 segment),
          location: { x_mm: 0.0, y_mm: y, z_mm: 0.0 },
          stimulator_segments: [
-          { segment: 1,  stimulator: stimulator },
-          { segment: 10, stimulator: stimulator },
+          { segment: 5,  stimulator: stimulator },
+          { segment: 190, stimulator: stimulator },
         ]
        }
   in
