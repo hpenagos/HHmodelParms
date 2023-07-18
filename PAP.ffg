@@ -1,7 +1,29 @@
 let
+  prelude = https://raw.githubusercontent.com/reuron/reuron-io/main/prelude/package.ffg
+let
   oldDefaultNeuron = https://raw.githubusercontent.com/reuron/reuron-lib/main/defaultSwcNeuron.ffg
 let
   newDefaultNeuron = https://raw.githubusercontent.com/hpenagos/HHmodelParms/main/defaultSwcNeuron.ffg
+
+let
+  negOne : Integer = Natural/toInteger 0 -- Natural/toInteger 1
+
+let
+  segment : Natural -> {id: Natural, parent: Integer, x: Real, y: Real, z: Real, r: Real, type: Natural } = \i ->
+  let
+    ii : Real = Integer/toReal i
+  let
+    parent : Integer = if Natural/equal i 0 then negOne else (Natural/toInteger i) + negOne
+    in {
+          id: i,
+          parent: parent,
+          x: ii,
+          y: 50.1 * Real/cos (ii % 10.0),
+          z: 50.1 * Real/sin (ii % 10.0),
+          r: 0.5,
+          type: if (Natural/equal i 0) then 1 else 2
+        }
+
 let
   stimulator =
   Neuron/stimulator {
@@ -20,18 +42,7 @@ let
     let y = if useNew then 0.1 else 0.0
     let maker = if useNew then newDefaultNeuron else oldDefaultNeuron
     in {
-          neuron: maker [
-            { id: 1,  parent: -1, x: -500.0, y: 0.0, z: 0.0, r: 0.5, type: 1 },
-            { id: 2,  parent:  1, x: -400.0, y: 0.0, z: 0.0, r: 0.5, type: 2 },
-            { id: 3,  parent:  2, x: -300.0, y: 0.0, z: 0.0, r: 0.5, type: 2 },
-            { id: 4,  parent:  3, x: -200.0, y: 0.0, z: 0.0, r: 0.5, type: 2 },
-            { id: 5,  parent:  4, x: -100.0, y: 0.0, z: 0.0, r: 0.5, type: 2 },
-            { id: 6,  parent:  5, x:  000.0, y: 0.0, z: 0.0, r: 0.5, type: 2 },
-            { id: 7,  parent:  6, x:  100.0, y: 0.0, z: 0.0, r: 0.5, type: 2 },
-            { id: 8,  parent:  7, x:  200.0, y: 0.0, z: 0.0, r: 0.5, type: 2 },
-            { id: 9,  parent:  8, x:  300.0, y: 0.0, z: 0.0, r: 0.5, type: 2 },
-            { id: 10, parent:  9, x:  400.0, y: 0.0, z: 0.0, r: 0.5, type: 2 },
-          ],
+         neuron: maker (prelude.list.generate 100 segment),
          location: { x_mm: 0.0, y_mm: y, z_mm: 0.0 },
          stimulator_segments: [
           { segment: 1,  stimulator: stimulator },
