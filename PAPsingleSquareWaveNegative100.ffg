@@ -34,7 +34,7 @@ let
     },
     current_shape: SquareWave {
       on_current_uamps_per_square_cm: 300.0,
-      off_current_uamps_per_square_cm: -10.0
+      off_current_uamps_per_square_cm: 55.0
     }
   }
 let
