@@ -32,7 +32,7 @@ let
       onset_sec: 0.0001,
       offset_sec: 0.0007
     },
-    current_shape: LinearRamp {
+    current_shape: LinearRampWave {
       on_current_uamps_per_square_cm: 300.0,
       off_current_uamps_per_square_cm: -1.0
     }
