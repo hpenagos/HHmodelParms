@@ -51,7 +51,7 @@ let
   in
 Neuron/scene {
   neurons: [
-     mkNeuron true
+     mkNeuron false
   ],
   synapses: []
 }
