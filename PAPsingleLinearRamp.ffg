@@ -3,7 +3,7 @@ let
 let
   oldDefaultNeuron = https://raw.githubusercontent.com/reuron/reuron-lib/main/defaultSwcNeuron.ffg
 let
-  newDefaultNeuron = https://raw.githubusercontent.com/hpenagos/HHmodelParms/main/defaultSwcNeuron.ffg
+  newDefaultNeuron = ./defaultSwcNeuron.ffg
 
 let
   negOne : Integer = Natural/toInteger 0 -- Natural/toInteger 1
