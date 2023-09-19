@@ -105,8 +105,8 @@ in
         magnitude: {v_at_half_max_mv: -82.0, slope: -9.0},
         time_constant: Sigmoid {
           v_at_max_tau_mv: -75.0,
-          c_base:  10e-3,
-          c_amp:  50e-3,
+          c_base:  10.0e-3,
+          c_amp:  50.0e-3,
           sigma: 20.0
         } 
       }
@@ -119,8 +119,8 @@ in
         magnitude: {v_at_half_max_mv: -90.0, slope: -8.5},
         time_constant: Sigmoid {
           v_at_max_tau_mv: -75.0,
-          c_base: 10e-3,
-          c_amp: 40e-3,
+          c_base: 10.0e-3,
+          c_amp: 40.0e-3,
           sigma:  20.0
         }
       }
