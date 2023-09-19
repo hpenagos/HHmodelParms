@@ -9,7 +9,7 @@ in {
   pyramidal_cell: {
 
     apical_dendrite: Neuron/membrane {
-      capacitance_farads_per_square_cm: 2e-6,
+      capacitance_farads_per_square_cm: 2.0e-6,
       membrane_channels: [
         { channel: na_transient , siemens_per_square_cm: 0.023 },
         { channel: leak , siemens_per_square_cm: 0.03e-3 },
@@ -19,7 +19,7 @@ in {
     },
 
     basal_dendrite: Neuron/membrane {
-      capacitance_farads_per_square_cm: 2e-6,
+      capacitance_farads_per_square_cm: 2.0e-6,
       membrane_channels: [
         { channel: leak , siemens_per_square_cm: 0.03e-3 },
         { channel: hcn_dendrite , siemens_per_square_cm: 0.08e-3 }
@@ -27,29 +27,29 @@ in {
     },
 
     axon_initial_segment: Neuron/membrane {
-      capacitance_farads_per_square_cm: 1e-6,
+      capacitance_farads_per_square_cm: 1.0e-6,
       membrane_channels: [
-        { channel: na_transient , siemens_per_square_cm: 120e-3 },
+        { channel: na_transient , siemens_per_square_cm: 120.0e-3 },
         { channel: leak , siemens_per_square_cm: 0.3e-3 },
-        { channel: k_slow , siemens_per_square_cm: 36e-3 }
+        { channel: k_slow , siemens_per_square_cm: 36.0e-3 }
       ]
     },
 
     axon: Neuron/membrane {
-      capacitance_farads_per_square_cm: 1e-6,
+      capacitance_farads_per_square_cm: 1.0e-6,
       membrane_channels: [
-        { channel: na_transient , siemens_per_square_cm: 120e-3 },
+        { channel: na_transient , siemens_per_square_cm: 120.0e-3 },
         { channel: leak , siemens_per_square_cm: 0.3e-3 },
-        { channel: k_slow , siemens_per_square_cm: 36e-3 }
+        { channel: k_slow , siemens_per_square_cm: 36.0e-3 }
       ]
     },
 
     soma: Neuron/membrane {
-      capacitance_farads_per_square_cm: 1e-6,
+      capacitance_farads_per_square_cm: 1.0e-6,
       membrane_channels: [
-        { channel: k_slow, siemens_per_square_cm: 36e-3 },
-        { channel: na_transient, siemens_per_square_cm: 12e-3 },
-        { channel: leak, siemens_per_square_cm: 3e-5 }
+        { channel: k_slow, siemens_per_square_cm: 36.0e-3 },
+        { channel: na_transient, siemens_per_square_cm: 12.0e-3 },
+        { channel: leak, siemens_per_square_cm: 3.0e-5 }
       ]
     }
 
